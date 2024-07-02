@@ -1,6 +1,6 @@
-# Buku Tamu Online
+# Buku Tamu BPS
 
-Aplikasi Buku Tamu Online dirancang untuk mempermudah pengunjung dalam melakukan pengisian buku tamu di instansi Universitas Nusa Cendana tepatnya di LPPM (**Lembaga Penelitian dan Pengabdian kepada Masyarakat**).
+Aplikasi Buku Tamu Online dirancang untuk mempermudah pengunjung dalam melakukan pengisian buku tamu di instansi BPS Kota Kupang (**Badan Pusat Statistik**).
 
 Dengan Buku Tamu Online, proses pendaftaran tamu menjadi lebih cepat dan mudah. Pengunjung tidak perlu lagi mengisi formulir fisik yang memakan waktu. Akses online memungkinkan tamu untuk mendaftar dari mana saja, bahkan sebelum tiba di lokasi.
 
