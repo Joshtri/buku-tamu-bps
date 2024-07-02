@@ -45,15 +45,15 @@ app.use(session({
 }));
 
 
+// Routes
+app.use('/', homeRouter);
+g
 app.use(flash({ sessionKeyName: 'flashMessage' }));
 
 // Gunakan middleware untuk membaca JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
-// Routes
-app.use('/', homeRouter);
 
 // Start the server
 app.listen(port, () => {

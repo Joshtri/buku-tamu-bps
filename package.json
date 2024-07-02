@@ -6,10 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js",
-    "build": "eslint . && echo 'Build successful'",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix --ext .js,.jsx ."
+    "dev": "nodemon index.js"
 
   },
   "dependencies": {
