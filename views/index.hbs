@@ -1,0 +1,121 @@
+{{> main}}
+
+<link rel="stylesheet" href="/css/signature.css">
+
+<div class="container mt-5 mb-4">
+
+
+  {{#each messageCreateSuccess}}
+    <div class="toast-container top-0 end-0 p-3 animate__animated animate__fadeInDown">
+      <!-- Then put toasts within -->
+      <div class="toast show fade" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <div class="custom-avatar rounded me-2"></div>
+          <strong class="me-auto">Notifikasi</strong>
+          <small class="text-body-secondary">just now</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          {{this}}
+        </div>
+      </div>
+    </div>
+  {{/each}}
+
+
+  <div class="card border-0 shadow-sm p-3 col-lg-10 mx-auto">
+
+    <h2>Selamat Datang</h2>
+    <p>Di pengisian buku tamu online BPS (Badan Pusat Statistik). Kami sangat senang bisa melayani Anda. Harap isi data dengan lengkap dan jangan ragu untuk bertanya jika membutuhkan bantuan.</p>
+
+    <hr>
+
+    <div class="">
+      <form id="signature-form" action="/post" method="post" >
+
+      <div class="row mx-auto  justify-content-center mt-2">
+        <div class="col-lg-5 ">
+          <label for="" class="form-label">[<i class="mx-1 fa-regular fa-address-card fa-beat"style="color: #dec054;"></i>]-Nama Lengkap</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="nama_lengkap" placeholder="contoh: anton" required>
+        </div>
+
+        <div class="col-lg-5">
+          <label for="" class="form-label">[<i class="mx-1 fa-solid fa-square-phone fa-shake"style="color: #74C0FC;"></i>]-Nomor HP</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1"name="no_hp"  placeholder="contoh: 085114345948" required>
+        </div>
+      </div>
+
+      <div class="row mx-auto mt-3 justify-content-center">
+        <div class="col-lg-5 ">
+          <label for="" class="form-label">[<i class="mx-1 fa-solid fa-building"style="color: #ca5858;"></i>]-Asal Instansi</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="asal"  placeholder="contoh : Universitas Nusa Cendana" required>
+            <small class="small text-warning">*) tamu mahasiswa mengisi asal fakultas/jurusan/instansi</small>
+        </div>
+
+        <div class="col-lg-5">
+          <label for="" class="form-label">[<i class="mx-1 fa-solid fa-pen-clip"></i>]-Keperluan</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="keperluan"  placeholder="contoh: konsultasi bersama pak lukas" required>
+            <small class="small text-warning">*) gunakan nomor aktif</small>
+
+        </div>
+      </div>
+
+
+      <div class="row justify-content-center mx-auto mt-1">
+        <div class="col-lg-5">
+          <label for="" class="form-label">[<i class="mx-1 fa-solid fa-person"style="color: #3caf6a;"></i>]-Orang yang dituju</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="orang_dituju"  placeholder="contoh: pak lukas" required>
+        </div>
+        <div class="col-lg-5">
+
+        </div>
+      </div>
+      <hr>
+      <div class="text-center">
+          <label for="" class="form-label fw-bold fs-4">[<i class="fa-solid fa-signature mx-1 fa-beat-fade"style="color: #B197FC;"></i>]-Tanda Tangan Digital</label>
+          <!-- Elemen HTML untuk menampung area tanda tangan -->
+  <div id="signature" class="box"></div>
+    <!-- Input hidden untuk menyimpan tanda tangan dalam format base64 -->
+    <input type="hidden" name="signature" id="signature-field">
+      </div>
+
+      <div class="mt-3">
+        <div class="row">
+          <div class="col text-start">
+            <button type="button" onclick="resetSignature()" class="btn btn-warning">
+              <i class="fa-solid fa-arrow-rotate-left fa-spin fa-spin-reverse mx-1" style="color: #ba4a4a;"></i>Reset TTD
+            </button>
+          </div>
+          <div class="col text-center">
+            <button class="btn btn-primary" type="submit">
+              <i class="mx-1 fa-solid fa-floppy-disk"></i>Kirim
+            </button>
+          </div>
+          {{!-- <div class="col"></div> --}}
+        </div>
+      </div>
+
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer class="footer" style="background-color: #0b6c9c;">
+  <div class="content has-text-centered">
+    <div class="d-flex justify-content-center align-items-center mb-3">
+      <img src="/img/bpslogo.webp" alt="Logo Instansi 1" style="height:100px; width:100px;" class="logo mx-2">
+      <img src="/img/logo_kotkup.webp" alt="Logo Instansi 2" style="height:100px; width:100px;" class="logo mx-2">
+      <img src="/img/unc_logo.webp" alt="Logo Instansi 3" style="height:100px; width:100px;" class="logo mx-2">
+    </div>
+    <p class="mb-0 text-white fw-light">
+      &copy; <span id="current-year"></span> Badan Pusat Statistik. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jSignature/2.1.2/libs/jSignature.min.js"></script>
+<script src="/js/jsSignature.js"></script>
+
+<script src="/js/currentYear.js"></script>

@@ -1,0 +1,30 @@
+<footer class="footer fixed-bottom py-3" style="background-color: #2C95C8;">
+  <div class="content has-text-centered">
+    <div class="d-flex justify-content-center align-items-center mb-3">
+      <img src="/img/ilkom-logo.webp" alt="Logo Instansi 1" style="height:130px; width:130px;" class="logo mx-2">
+      <img src="/img/unc_logo.webp" alt="Logo Instansi 2" style="height:130px; width:130px;" class="logo mx-2">
+      <img src="/img/chipset_logo.webp" alt="Logo Instansi 3" style="height:130px; width:130px;" class="logo mx-2">
+    </div>
+    <p class="mb-0">
+      &copy; <span id="current-year"></span> Chipset. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+
+<style>
+  .footer {
+    background-color: #b4b2a4;
+    padding: 1rem 0;
+  }
+  .footer .logo {
+    height: 130px;
+    width: 130px;
+  }
+  .footer .content {
+    text-align: center;
+  }
+</style>
