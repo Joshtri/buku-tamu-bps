@@ -8,7 +8,6 @@ import { config } from 'dotenv';
 import flash from 'connect-flash';
 import hbs from 'hbs';
 import handlebarsLayouts from 'handlebars-layouts';
-import homeRouter from './routes/index.route.js';
 import connectDB from './config/dbConfig.js';
 import envFile from './config/envConfig.js';
 
@@ -17,6 +16,7 @@ config({ path: path.resolve(process.cwd(), envFile) });
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+import homeRouter from './routes/index.route.js';
 
 const app = express();
 const port = process.env.PORT || 3000;
