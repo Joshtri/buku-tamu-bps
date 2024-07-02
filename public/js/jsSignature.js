@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 $(document).ready(function() {
     // Inisialisasi jSignature pada elemen dengan id "signature"
     $('#signature').jSignature({

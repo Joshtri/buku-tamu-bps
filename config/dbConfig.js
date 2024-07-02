@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import mongoose from "mongoose";
 import { config } from "dotenv";
 import envFile from "./envConfig.js";
@@ -8,7 +9,7 @@ config({ path: path.resolve(process.cwd(), envFile) });
 
 const connectDB = async () => {
     try {
-        // eslint-disable-next-line no-undef
+   
         const conn = await mongoose.connect(process.env.MONGODB_URI, {
             // Tambahkan opsi timeout di sini (misalnya, 30 detik)
             // serverSelectionTimeoutMS: 30000,

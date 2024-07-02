@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { config } from "dotenv";
 import path from "path";
 
