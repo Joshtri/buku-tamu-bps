@@ -4,19 +4,16 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import session from 'express-session';
-import { config } from "dotenv";
+import { config } from 'dotenv';
 import flash from 'connect-flash';
 import hbs from 'hbs';
 import handlebarsLayouts from 'handlebars-layouts';
 import homeRouter from './routes/index.route.js';
-
 import connectDB from './config/dbConfig.js';
-
-import envFile from "./config/envConfig.js";
+import envFile from './config/envConfig.js';
 
 // Load environment variables from the appropriate .env file
-config({ path: path.resolve(process.cwd(), envFile) }); 
-
+config({ path: path.resolve(process.cwd(), envFile) });
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -37,23 +34,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Serve Font Awesome from node_modules
 app.use('/fa', express.static(path.join(__dirname, 'node_modules/@fortawesome/fontawesome-free')));
 
+// Gunakan middleware untuk membaca JSON dan URL-encoded data
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
+// Session middleware
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true,
 }));
 
+// Flash middleware
+app.use(flash({ sessionKeyName: 'flashMessage' }));
 
 // Routes
 app.use('/', homeRouter);
-g
-app.use(flash({ sessionKeyName: 'flashMessage' }));
-
-// Gunakan middleware untuk membaca JSON
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
 
 // Start the server
 app.listen(port, () => {
