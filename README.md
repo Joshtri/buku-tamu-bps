@@ -8,7 +8,7 @@ Dengan Buku Tamu Online, proses pendaftaran tamu menjadi lebih cepat dan mudah. 
 
 ## 📄 Penggunaan
 
-1. **Akses Aplikasi**: Buka browser Anda dan pergi ke [Buku Tamu Online](https://guest-system-form.vercel.app/).
+1. **Akses Aplikasi**: Buka browser Anda dan pergi ke [Buku Tamu Online](https://buku-tamu-bps.vercel.app/).
 2. **Mengisi Buku Tamu Online**: Mengisi Form berupa data anda selaku tamu dan melakukan tanda tangan.
 
 ## ⚙️ Teknologi yang Digunakan
